@@ -28,23 +28,30 @@
                 <th>
                     Date Created
                 </th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var obj in Model)
+            @foreach (var category in Model)
             {
                 <tr>
                     <td>
-                        @obj.Id
+                        @category.Id
                     </td>
                     <td>
-                        @obj.Name
+                        @category.Name
                     </td>
                     <td>
-                        @obj.DisplayOrder
+                        @category.DisplayOrder
                     </td>
                     <td>
-                        @obj.CreatedDateTime
+                        @category.CreatedDateTime
+                    </td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Category" asp-action="Edit" asp-route-id="@category.Id"
+                            class="btn btn-primary mx-2"><i class="bi bi-pencil-square"></i>Edit</a>
+                        </div>
                     </td>
                 </tr>
             }
